@@ -79,7 +79,7 @@ public class Postcard {
         navigation(context, 10, callback);
     }
 
-    private static final String TAG = "io.github.iamyours.router.Postcard";
+    private static final String TAG = "com.example.rain.router.Postcard";
 
     private CallbackFragment getFragment(Activity activity) {
         CallbackFragment fragment = (CallbackFragment) activity.getFragmentManager().findFragmentByTag(TAG);
