@@ -1,0 +1,36 @@
+plugins {
+    id 'java-library'
+}
+repositories {
+    google()
+    mavenCentral()
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly 'com.google.android:android:4.1.1.4'
+}
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
+//task sourceJar(type: Jar) {
+//    classifier = 'sources'
+//    from sourceSets.main.allSource
+//}
+//设置maven
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            //设置插件的GAV参数
+//            pom.groupId = 'com.example.rain.router_api'
+//            pom.artifactId = 'routerApi'
+//            pom.version = '1.0.0'
+//            //文件发布到下面目录
+//            repository(url: uri('../release'))
+//        }
+//    }
+//}

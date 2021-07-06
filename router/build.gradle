@@ -1,0 +1,25 @@
+plugins {
+    id 'java-library'
+    id 'maven'
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly 'com.google.android:android:4.1.1.4'
+}
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+//设置maven
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //设置插件的GAV参数
+            pom.groupId = 'com.example.rain.router'
+            pom.artifactId = 'router'
+            pom.version = '1.0.0'
+            //文件发布到下面目录
+            repository(url: uri('../release'))
+        }
+    }
+}

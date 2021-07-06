@@ -1,0 +1,6 @@
+rootProject.name = "RainRouter"
+include ':app'
+include ':router-api'
+include ':router-plugin'
+include ':ui'
+include ':router'

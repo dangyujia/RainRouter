@@ -1,0 +1,41 @@
+plugins {
+    id 'groovy'
+    id 'maven'
+}
+
+repositories {
+    google()
+    mavenCentral()
+}
+dependencies {
+    // Groovy DSL
+    implementation localGroovy()
+    // Gradle DS、
+    implementation gradleApi()
+    implementation 'com.android.tools.build:gradle:4.1.1'
+    implementation 'org.javassist:javassist:3.27.0-GA'
+
+}
+sourceSets {
+    main {
+        groovy {
+            srcDir 'src/main/groovy'
+        }
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+}
+//设置maven
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //设置插件的GAV参数
+            pom.groupId = 'com.example.rain.router_plugin'
+            pom.artifactId = 'router'
+            pom.version = '1.0.0'
+            //文件发布到下面目录
+            repository(url: uri('../release'))
+        }
+    }
+}
